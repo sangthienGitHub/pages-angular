@@ -3,7 +3,7 @@
     <li class="page-item" [ngClass]="{ disabled: currentPage === 0 }">
       <a (click)="currentPage = currentPage - 1" class="page-link">Prev</a>
     </li>
-    <div *ngFor="let image of images; let i = index">
+    <ng-container *ngFor="let image of images; let i = index">
       <li
         class="page-item"
         [ngClass]="{ active: i === currentPage }"
@@ -11,7 +11,7 @@
       >
         <a (click)="currentPage = i" class="page-link">{{ i + 1 }}</a>
       </li>
-    </div>
+    </ng-container>
     <li
       class="page-item"
       [ngClass]="{ disabled: currentPage === images.length - 1 }"
